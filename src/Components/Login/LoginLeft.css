@@ -1,0 +1,25 @@
+.login-left-panner {
+    width: 500px;
+    background: linear-gradient(180deg, #70DDFF 0.84%, rgba(25, 86, 241, 0.409565) 57.29%, rgba(27, 91, 241, 0.395111) 99.99%, rgba(67, 206, 250, 0.0709286) 100%);
+    font-family: 'IM FELL Great Primer SC';
+    font-size: 24px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+.logo {
+    padding: 30px;
+    height: 23%;
+}
+.line {
+    width: 80%;
+    color: white;
+}
+.login-welcome{
+    width: 100%;
+    font-size: 80px;
+    text-align: center;
+}
+.login-description {
+    text-align: center;
+}
