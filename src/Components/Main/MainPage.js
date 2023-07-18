@@ -19,7 +19,7 @@ const MainPage = () => {
                 <MainPageLogin/>
                 <MainPagePassword/>
             </div>
-            <img src={MainPageBackGroundImage} className="MainImage"/>
+            <img src={MainPageBackGroundImage} className="MainImage" alt="" />
         </div>
         
     )
