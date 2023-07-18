@@ -1,5 +1,4 @@
-import Header from "./Components/Header";
-import MainPage from "./Components/MainPage";
+import MainPage from "./Components/Main/MainPage";
 
 function App() {
   return (

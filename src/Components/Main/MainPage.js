@@ -1,9 +1,10 @@
 import Title from "./Title.js";
 import MainPagePrompt from "./MainPagePrompt.js";
-import MainPageBackGroundImage from "../Assets/MainPageBackGroundImage.png";
+import MainPageBackGroundImage from "../../Assets/MainPageBackGroundImage.png";
 import MainPageExplainText from "./MainPageExplainText.js";
 import MainPageLogin from "./MainPageLogin.js";
 import MainPagePassword from "./MainPagePassword.js";
+import image from '../../Assets/MainPageBackGroundImage.png'
 
 import './MainPage.css';
 
@@ -19,7 +20,7 @@ const MainPage = () => {
                 <MainPageLogin/>
                 <MainPagePassword/>
             </div>
-            <img src={MainPageBackGroundImage} className="MainImage"/>
+            <img src={image} className="MainImage"/>
         </div>
         
     )
