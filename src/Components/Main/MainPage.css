@@ -1,0 +1,92 @@
+
+.Title {
+    position: relative;
+    font-size: 100px;
+    color: white;
+    top: 250px;
+    
+}
+
+.TitleEffect{
+    color:rgba(59, 108, 199, 0.548);
+    width: 101.7%;
+    position: absolute;
+    top: 7px;
+    letter-spacing: 1px;
+    z-index: -1;
+}
+
+.MainPagePromptBox {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 70px;
+    width: 750px;
+    top: 250px;
+}
+
+.MainPagePromptInput {
+    background-color:rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 725px;
+    height: 50px;
+}
+
+.MainImage{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -100;
+}
+
+.TitleAndPrompt{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ExplainBox{
+    display:flex;
+    justify-content: center;
+    position: relative;
+    width: 200px;
+    background: rgba(0, 0, 0, 0.5);
+    top: 260px;
+}
+
+.ExplainText{
+    color: white;
+}
+
+.LoginAndPassword{
+    display:flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.SmallBox{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 75px;
+    height: 30px;
+    margin: 3px;
+}
+
+.MainPageLogin{
+    color: white;
+}
+
+.MainPagePassword{
+    font-size: 80%;
+    color: white;
+}
