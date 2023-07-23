@@ -4,9 +4,9 @@ import './MainPage.css';
 const Title = () => {
     return (
         <div className='Title'>
-            WEBSITE NAME
+            AI-CHEMY
             <div className='TitleEffect'>
-                WEBSITE NAME
+                AI-CHEMY
             </div>
         </div>
     )

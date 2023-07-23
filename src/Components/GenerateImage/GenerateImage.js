@@ -1,19 +1,26 @@
 import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { LoginContext } from "../../LoginContextProvider";
+import { AuthContext } from "../Context/AuthContextProvider";
 
 const GenerateImage = () => {
-    const { isLogin } = useContext(LoginContext);
+    const { user } = useContext(AuthContext);
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (!isLogin)
+        if (!user) {
             navigate("/SignIn")
+        }
     })
 
     return (
         <div>
-            GenerateImage Page
+            {user ? (
+                <div>
+                    GenerateImage Page
+                </div>
+            ) : (
+                null
+            )}
         </div>
     )
     
