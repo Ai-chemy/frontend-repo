@@ -11,6 +11,7 @@ const AuthContextProvider = ({children}) => {
     const [user, setUser] = useState(() => localToken ? jwt_decode(localTokenJSON.access) : null);
     const [tokens, setTokens] = useState(() => localTokenJSON);
     const [loading, setLoading] = useState(true);
+    const [isSignUpClicked, setIsSignUpClicked] = useState(false)
     const navigate = useNavigate();
 
     const signIn = async (event) => {
@@ -38,6 +39,28 @@ const AuthContextProvider = ({children}) => {
             alert("Something went wrong!")
         }
     } 
+
+    const signUp = async (event) => {
+        const response = await fetch("http://localhost:8000/signup/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                "username": event.target.username.value,
+                "password": event.target.username.value,
+                "email": event.target.email.target.value,
+            })
+        })
+        const data = await response.json();
+
+        if (response.status === 200) {
+            navigate("/SignIn")
+        }
+        else {
+            alert("Something went wrong!")
+        }
+    }
 
     const updateTokens = async () => {
         console.log("updateToken called")
@@ -72,6 +95,10 @@ const AuthContextProvider = ({children}) => {
         setTokens(null)
     }
 
+    const goHome = () => {
+        navigate("/")
+    }
+
     useEffect(() => {
         if (loading) {
             updateTokens()
@@ -87,9 +114,14 @@ const AuthContextProvider = ({children}) => {
     }, [tokens, loading]) 
 
     const contextData = {
+        tokens: tokens,
         user: user,
         signIn: signIn,
+        signUp: signUp,
         signOut: signOut,
+        goHome: goHome,
+        isSignUpClicked: isSignUpClicked,
+        setIsSignUpClicked: (prop) => setIsSignUpClicked(prop),
     }
 
     return (
