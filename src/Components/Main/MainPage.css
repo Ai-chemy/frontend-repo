@@ -1,15 +1,22 @@
+body {
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none
+  }
 
 .Title {
-    position: relative;
+    position: absolute;
     font-size: 100px;
     color: white;
+    margin-left: 50%;
+    transform: translate(-50%, 0);
     top: 250px;
-    
 }
 
 .TitleEffect{
     color:rgba(59, 108, 199, 0.548);
-    width: 101.7%;
+    width: 102%;
     position: absolute;
     top: 7px;
     letter-spacing: 1px;
@@ -19,16 +26,19 @@
 .MainPagePromptBox {
     display: flex;
     justify-content: center;
-    position: relative;
+    position: absolute;
     align-items: center;
 
     background-color: rgba(0, 0, 0, 0.5);
     height: 70px;
     width: 750px;
-    top: 250px;
+    top: 390px;
+    margin-left: 50%;
+    transform: translate(-50%, 0);
 }
 
 .MainPagePromptInput {
+    position: relative;
     background-color:rgba(0, 0, 0, 0.5);
     color: white;
     width: 725px;
@@ -39,27 +49,31 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
     z-index: -100;
+    width: 100%;
+    min-width: 1500px;
 }
 
 .TitleAndPrompt{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
+    width: 1000px;
+    margin-left: 50%;
+    transform: translate(-50%, 0);
 }
 
 .ExplainBox{
     display:flex;
     justify-content: center;
-    position: relative;
+    position: absolute;
     width: 200px;
     background: rgba(0, 0, 0, 0.5);
-    top: 260px;
+    top: 475px;
+    margin-left: 50%;
+    transform: translate(-50%, 0);
 }
 
 .ExplainText{
+    cursor: pointer;
     color: white;
 }
 
@@ -80,13 +94,54 @@
     width: 75px;
     height: 30px;
     margin: 3px;
+    
 }
 
 .MainPageLogin{
+    cursor: pointer;
     color: white;
 }
 
 .MainPagePassword{
+    cursor: pointer;
     font-size: 80%;
     color: white;
+}
+
+.MainExplainContainer{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 500px;
+    top: 1200px;
+    margin-left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.MainExplainText{
+    position: relative;
+    color: white;
+}
+
+.MainExplainEffectContainer{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 500px;
+    top: 1200px;
+    margin-left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.MainExplainTextEffect{
+    position: relative;
+    left: 2px;
+    top: 2px;
+    color: blueviolet;
 }

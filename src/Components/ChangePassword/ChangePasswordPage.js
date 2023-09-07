@@ -11,7 +11,6 @@ const ChangePasswordPage = () => {
             <PageInput />
             <ExplainText />
         </div>
-        
     )
 }
 

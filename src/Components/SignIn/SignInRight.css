@@ -27,6 +27,7 @@ input {
   color: #bdbdbd;
 }
 .login-button {
+  cursor: pointer;
   background-color: #ffb1b1;
   border: none;
   width: 40%;

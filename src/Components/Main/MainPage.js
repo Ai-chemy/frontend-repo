@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useRef } from 'react';
 import { AuthContext } from '../Context/AuthContextProvider.js';
 
 import Title from "./Title.js";
@@ -9,25 +9,34 @@ import MainPageLogin from "./MainPageLogin.js";
 import MainPagePassword from "./MainPagePassword.js";
 
 import GenerateImage from "../GenerateImage/GenerateImageBtn.js";
+import ShowImg from "../ShowImage/ShowImageBtn.js";
 
 import './MainPage.css';
 
 
 const MainPage = () => {
-    const { user, signOut } = useContext(AuthContext)
+    const { user, signOut } = useContext(AuthContext);
+    const scrollEnd = useRef(null);
 
     return(
         <div>
             <div className="TitleAndPrompt">
                 <Title />
                 <MainPagePrompt />
-                <MainPageExplainText />
+                <MainPageExplainText ref={scrollEnd}/>
             </div>
             
             {user ? (
                 <div className="LoginAndPassword" style={{color:"white"}}>
-                    <GenerateImage />
-                    <button onClick={signOut}>sign out</button>
+                    <div className='SmallBox' style={{width: '50%'}}>
+                        <GenerateImage />
+                    </div>
+                    <div className='SmallBox'>
+                        <ShowImg />
+                    </div>
+                    <div className='SmallBox'>
+                        <i onClick={signOut} style={{cursor:'pointer'}}>sign out</i>
+                    </div>
                 </div>
             ) : (
                 <div className="LoginAndPassword">
@@ -36,9 +45,19 @@ const MainPage = () => {
                 </div>
             )}
             
-            <img src={MainPageBackGroundImage} className="MainImage" alt="" />
+            <div className='MainExplainEffectContainer'>
+                <i className='MainExplainTextEffect'>We are providing images by using stable diffusion.</i>
+                <i className='MainExplainTextEffect'>You can get your own images from our website.</i>
+                <i className='MainExplainTextEffect'>Click the sign in button on the upper right and generate your own images! </i>
+            </div>
+            <div className='MainExplainContainer'>
+                <i className='MainExplainText' id='bottomScrollEnd' ref={scrollEnd}>We are providing images by using stable diffusion.</i>
+                <i className='MainExplainText'>You can get your own images from our website.</i>
+                <i className='MainExplainText'>Click the sign in button on the upper right and generate your own images! </i>
+            </div>
+            
+            <img id="MainBG" src={MainPageBackGroundImage} className="MainImage" alt=""/>
         </div>
-        
     )
 }
 

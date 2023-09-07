@@ -9,5 +9,6 @@
     align-items: center;
 }
 .header-font {
+    cursor: pointer;
     font-size: 30px;
 }   

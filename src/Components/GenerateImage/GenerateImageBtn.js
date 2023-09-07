@@ -7,9 +7,9 @@ const GenerateImageBtn = () => {
 
   return (
     <div className="gen-img-wrapper">
-      <button className="gen-img-btn" onClick={() => (navigate("/generate"))}>
+      <i className="gen-img-btn" onClick={() => (navigate("/generate"))}>
         Generate Image Here!
-      </button>
+      </i>
     </div>
   )
 }

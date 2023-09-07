@@ -21,6 +21,7 @@
     margin-bottom: 10px;
 }
 .generate-button {
+    cursor: pointer;
     font-size: 20px;
     width: 100px;
     height: 40px;
