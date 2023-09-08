@@ -8,9 +8,9 @@ const MainPageLogin = () => {
     }
     return(
         <div className="SmallBox">
-            <div onClick={goToSign} className="MainPageLogin">
+            <i onClick={goToSign} className="MainPageLogin">
                 SignIn
-            </div>
+            </i>
         </div>
     )
 }

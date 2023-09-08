@@ -1,0 +1,36 @@
+.generate-root {
+    width: 100vw;
+}
+.generate-wrapper {
+    width: 90vw;
+    margin: auto;
+}
+.generate-container {
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-around;
+}
+.generate-form-container {
+    display: flex;
+    flex-direction: column;
+}
+.generate-prompt {
+    width: 500px;
+    height: 50px;
+    margin-top: 60px;
+    margin-bottom: 10px;
+}
+.generate-button {
+    cursor: pointer;
+    font-size: 20px;
+    width: 100px;
+    height: 40px;
+    margin: auto
+}
+.generate-image-box {
+    width: 512px;
+    height: 512px;
+    background-color: bisque;
+    text-align: center;
+    line-height: 512px;
+}

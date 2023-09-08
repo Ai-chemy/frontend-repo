@@ -1,11 +1,19 @@
-import React from 'react'
-import "./LoginLeft.css"
+import { useNavigate } from "react-router-dom"
+import "./SignInLeft.css"
 
-const LoginLeft = () => {
+const SignInLeft = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/")
+  }
+
   return (
     <div className="login-left-panner">
-        <div className="logo">
+        <div className="logo-container">
+          <div className="logo-text" onClick={handleClick}>
             AI-CHEMY
+          </div>
         </div>
         <div className="login-welcome">
             WELCOME
@@ -18,4 +26,4 @@ const LoginLeft = () => {
   )
 }
 
-export default LoginLeft;
+export default SignInLeft;

@@ -8,9 +8,9 @@ const MainPagePassword = () => {
     }
     return(
         <div className="SmallBox">
-            <div onClick={goToSign} className="MainPagePassword">
+            <i onClick={goToSign} className="MainPagePassword">
                 Forgot My Password
-            </div>
+            </i>
         </div>
     )
 }
