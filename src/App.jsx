@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import AuthContextProvider from "./Components/Context/AuthContextProvider";
 import MainPage from "./Components/Main/MainPage";
@@ -25,3 +26,4 @@ function App() {
 }
 
 export default App;
+

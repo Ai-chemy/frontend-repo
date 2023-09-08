@@ -1,15 +1,15 @@
 import { useContext, useRef } from 'react';
-import { AuthContext } from '../Context/AuthContextProvider.js';
+import { AuthContext } from '../Context/AuthContextProvider.jsx';
 
-import Title from "./Title.js";
-import MainPagePrompt from "./MainPagePrompt.js";
-import MainPageBackGroundImage from "../../Assets/MainPageBackGroundImage.png";
-import MainPageExplainText from "./MainPageExplainText.js";
-import MainPageLogin from "./MainPageLogin.js";
-import MainPagePassword from "./MainPagePassword.js";
+import Title from "./Title.jsx";
+import MainPagePrompt from "./MainPagePrompt.jsx";
+import MainPageBackGroundImage from "../../assets/MainPageBackGroundImage.png";
+import MainPageExplainText from "./MainPageExplainText.jsx";
+import MainPageLogin from "./MainPageLogin.jsx";
+import MainPagePassword from "./MainPagePassword.jsx";
 
-import GenerateImage from "../GenerateImage/GenerateImageBtn.js";
-import ShowImg from "../ShowImage/ShowImageBtn.js";
+import GenerateImage from "../GenerateImage/GenerateImageBtn.jsx";
+import ShowImg from "../ShowImage/ShowImageBtn.jsx";
 
 import './MainPage.css';
 

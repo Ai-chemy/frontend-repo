@@ -1,26 +1,25 @@
-# 가져올 이미지 정의
-FROM node:18.16.1
+# base image는 node image로 시작한다. npm과 yarn이 모두 설치되어 있다.
+FROM nginx:1.25.1-alpine3.17-slim
 
-# Working Directory 경로 설정하기
-# Working Directory란? : https://velog.io/@bsjp400/Docker-Working-Directory%EB%A5%BC-%EB%AA%85%EC%8B%9C%ED%95%B4%EC%A4%98%EC%95%BC-%EB%90%98%EB%8A%94-%EC%9D%B4%EC%9C%A0
-WORKDIR /app
+# nginx의 기본 service를 제거한다.
+RUN rm -rf /etc/nginx/sites-enabled/default
 
-# package.json WORKDIR에 복사
-COPY package.json .
+# nginx에 serving할 html의 설정파일을 복사한다.
+COPY nginx.conf /etc/nginx/conf.d
 
-# 명령어 실행 (의존성 설치)
-RUN npm install
+# 작업영역을 선택한다. mkdir, cd를 동시에 진행한다 생각하면 된다.
+WORKDIR /code
 
-# 현재 디렉토리의 모든 파일을 WORKDIR에 복사
-COPY . .
+# 배포할 파일을 복사한다.
+COPY dist/ dist/
 
-# 각각의 명령어들은 한줄씩 캐싱되어 실행된다.
-# package.json의 내용은 자주 바뀌진 않지만
-# 소스코드는 자주 바뀌는데 npm install과 COPY . .을 동시에 수행하면
-# 소스 코드가 조금 달라질때에도 항상 npm install을 수행해서 리소스가 낭비된다.
+# frontend Port를 설정한다.
+EXPOSE 5000
 
-# 3000번 포트 노출
-EXPOSE 3000
+# container가 종료될 때 정상종료를 유도한다.
+STOPSIGNAL SIGTERM
 
-# npm start 스크립트 실행
-CMD ["npm", "start"]
+# nginx를 global 설정
+# Docker에서는 nginx가 daemon으로 실행되지 않도록 한다.
+# daemon으로 실행하지 않으면 container가 바로 종료된다.
+CMD ["nginx", "-g", "daemon off;"]
